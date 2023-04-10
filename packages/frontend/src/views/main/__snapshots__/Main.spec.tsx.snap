@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main View Renders properly 1`] = `
+<div
+  className="MuiContainer-root sc-eDDNvR KMbss MuiContainer-maxWidthLg"
+>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary sc-iAEyYk hKQuvX MuiPaper-elevation4"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular sc-fsQiph cvNwpl MuiToolbar-gutters"
+    >
+      <img
+        className="sc-qRumB dlUQUu"
+        onClick={[Function]}
+        src="logo.png"
+      />
+    </div>
+  </header>
+  <div
+    className="MuiContainer-root sc-jTrPJq ceOdjZ MuiContainer-maxWidthLg"
+  >
+    <div
+      className="MuiContainer-root sc-beqWaB emoJJV MuiContainer-maxWidthLg"
+    >
+      <div
+        className="MuiGrid-root sc-gueYoa gcjcJu MuiGrid-container MuiGrid-spacing-xs-2"
+      />
+    </div>
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-1 sc-gLDzan gAcRhg"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      Copyright © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+        href="https://www.linkedin.com/in/abasallo/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        alvaro@basallo.es
+      </a>
+       2023
+    </p>
+  </div>
+</div>
+`;

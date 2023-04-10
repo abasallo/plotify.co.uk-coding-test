@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Server E2E tests Company E2E tests GetCompanies 1`] = `
+{
+  "data": {
+    "getCompanies": [
+      {
+        "id": "1",
+        "name": "Company I",
+      },
+      {
+        "id": "2",
+        "name": "Company II",
+      },
+      {
+        "id": "3",
+        "name": "Company III",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Server E2E tests Health Check E2E tests Expected response for Health Check 1`] = `"OK"`;
+
+exports[`Server E2E tests Phase E2E tests GetPhases 1`] = `
+{
+  "data": {
+    "getPhases": [
+      {
+        "id": "1",
+        "name": "Phase I",
+      },
+      {
+        "id": "2",
+        "name": "Phase II",
+      },
+      {
+        "id": "3",
+        "name": "Phase III",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Server E2E tests Task E2E tests GetTasks 1`] = `
+{
+  "data": {
+    "getTasks": [
+      {
+        "completed": false,
+        "id": "1",
+        "text": "Task I",
+      },
+    ],
+  },
+}
+`;
+
+exports[`Server E2E tests Task E2E tests ToggleTaskCompletion 1`] = `
+{
+  "data": {
+    "toggleTaskCompletion": {
+      "completed": Any<Boolean>,
+      "id": "1",
+      "text": "Task I",
+    },
+  },
+}
+`;

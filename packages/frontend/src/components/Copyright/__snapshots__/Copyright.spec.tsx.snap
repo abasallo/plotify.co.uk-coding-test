@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copyright Component Renders properly 1`] = `
+<p
+  className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+>
+  Copyright © 
+  <a
+    className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+    href="https://www.linkedin.com/in/abasallo/"
+    onBlur={[Function]}
+    onFocus={[Function]}
+  >
+    alvaro@basallo.es
+  </a>
+   2023
+</p>
+`;

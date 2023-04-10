@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Random Facts View Renders properly 1`] = `
+<div
+  className="MuiContainer-root sc-beqWaB dDnzPd MuiContainer-maxWidthLg"
+>
+  <header
+    className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary sc-hLseeU csdnVv MuiPaper-elevation4"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-regular sc-eDDNvR cPuiyT MuiToolbar-gutters"
+    >
+      <img
+        className="sc-jTrPJq rmupg"
+        onClick={[Function]}
+        src="logo.png"
+      />
+    </div>
+  </header>
+  <div
+    className="MuiContainer-root sc-gueYoa gcjcJu MuiContainer-maxWidthLg"
+  >
+    <h1 />
+  </div>
+  <div
+    className="MuiBox-root MuiBox-root-1 sc-dmqHEX hWKGNj"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body2 MuiTypography-colorTextSecondary MuiTypography-alignCenter"
+    >
+      Copyright © 
+      <a
+        className="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorInherit"
+        href="https://www.linkedin.com/in/abasallo/"
+        onBlur={[Function]}
+        onFocus={[Function]}
+      >
+        alvaro@basallo.es
+      </a>
+       2023
+    </p>
+  </div>
+</div>
+`;

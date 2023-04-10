@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Component Renders properly 1`] = `
+<header
+  className="MuiPaper-root MuiAppBar-root MuiAppBar-positionStatic MuiAppBar-colorPrimary sc-beqWaB cSSpyH MuiPaper-elevation4"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-regular sc-gueYoa gktaZg MuiToolbar-gutters"
+  >
+    <img
+      className="sc-dmqHEX cWIwhm"
+      onClick={[Function]}
+      src="logo.png"
+    />
+  </div>
+</header>
+`;

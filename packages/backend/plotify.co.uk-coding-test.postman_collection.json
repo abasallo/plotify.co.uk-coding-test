@@ -1,0 +1,709 @@
+{
+	"info": {
+		"_postman_id": "8fdb4a14-e7a8-4fa8-b102-67cbcc3373aa",
+		"name": "plotify.co.uk-coding-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "311611"
+	},
+	"item": [
+		{
+			"name": "Health Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:4000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:4000/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-nOO9QiTIwXgNtWtBJezz8kv3SLc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:28:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "OK"
+				}
+			]
+		},
+		{
+			"name": "Get Companies",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetCompanies {\n  getCompanies {\n    id,\n    name\n  }\n}",
+						"variables": ""
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "All Companies",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetCompanies {\n  getCompanies {\n    id,\n    name\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "121"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"79-pSRX3GeYmoLFYOif7yJq8k3Jzgk\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:28:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getCompanies\": [\n            {\n                \"id\": \"1\",\n                \"name\": \"Company I\"\n            },\n            {\n                \"id\": \"2\",\n                \"name\": \"Company II\"\n            },\n            {\n                \"id\": \"3\",\n                \"name\": \"Company III\"\n            }\n        ]\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Phases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetPhases($companyId: String!) {\n  getPhases(companyId: $companyId) {\n    id,\n    name,\n    parentPhaseId\n    tasks {\n        id,\n        text,\n        completed\n    }\n  }\n}",
+						"variables": "{\n    \"companyId\": \"1\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Company I Phases",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetPhases($companyId: String!) {\n  getPhases(companyId: $companyId) {\n    id,\n    name,\n    parentPhaseId\n    tasks {\n        id,\n        text,\n        completed\n    }\n  }\n}",
+								"variables": "{\n    \"companyId\": \"1\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "477"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1dd-7mxCeylvUDhmSD+NZe9CNsWvLMA\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:28:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getPhases\": [\n            {\n                \"id\": \"1\",\n                \"name\": \"Phase I\",\n                \"parentPhaseId\": null,\n                \"tasks\": [\n                    {\n                        \"id\": \"1\",\n                        \"text\": \"Task I\",\n                        \"completed\": false\n                    }\n                ]\n            },\n            {\n                \"id\": \"2\",\n                \"name\": \"Phase II\",\n                \"parentPhaseId\": \"1\",\n                \"tasks\": [\n                    {\n                        \"id\": \"2\",\n                        \"text\": \"Task I\",\n                        \"completed\": false\n                    },\n                    {\n                        \"id\": \"3\",\n                        \"text\": \"Task II\",\n                        \"completed\": false\n                    }\n                ]\n            },\n            {\n                \"id\": \"3\",\n                \"name\": \"Phase III\",\n                \"parentPhaseId\": \"2\",\n                \"tasks\": [\n                    {\n                        \"id\": \"4\",\n                        \"text\": \"Task I\",\n                        \"completed\": false\n                    },\n                    {\n                        \"id\": \"5\",\n                        \"text\": \"Task II\",\n                        \"completed\": false\n                    },\n                    {\n                        \"id\": \"6\",\n                        \"text\": \"Task III\",\n                        \"completed\": false\n                    }\n                ]\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Empty Result",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetPhases($companyId: String!) {\n  getPhases(companyId: $companyId) {\n    id,\n    name,\n    parentPhaseId\n    tasks {\n        id,\n        text,\n        completed\n    }\n  }\n}",
+								"variables": "{\n    \"companyId\": \"20\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "26"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1a-vVMdXiyp4YHu35k5Hiaw+8bIZjQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:32:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getPhases\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Tasks",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "query GetTasks($phaseId: String!) {\n  getTasks(phaseId: $phaseId) {\n    id,\n    text,\n    completed\n  }\n}",
+						"variables": "{\n    \"phaseId\": \"1\"\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Phase 1 Tasks",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetTasks($phaseId: String!) {\n  getTasks(phaseId: $phaseId) {\n    id,\n    text,\n    completed\n  }\n}",
+								"variables": "{\n    \"phaseId\": \"1\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "69"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"45-x8PCxuzN7rJTiePrfGSi0JS7kTc\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:29:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getTasks\": [\n            {\n                \"id\": \"1\",\n                \"text\": \"Task I\",\n                \"completed\": false\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Empty Result",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query GetTasks($phaseId: String!) {\n  getTasks(phaseId: $phaseId) {\n    id,\n    text,\n    completed\n  }\n}",
+								"variables": "{\n    \"phaseId\": \"20\"\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "25"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19-vQNMJPoGqfBincIE/CCyGbi5UNM\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:30:52 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"getTasks\": []\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Toggle Task Completion",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "content-type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "graphql",
+					"graphql": {
+						"query": "mutation ToggleTaskCompletion($id: ID!) {\n  toggleTaskCompletion(id: $id) {\n    id,\n    text,\n    completed\n  }\n}",
+						"variables": "{\n    \"id\": 1\n}"
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/graphql",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"graphql"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Task cannot be changed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ToggleTaskCompletion($id: ID!) {\n  toggleTaskCompletion(id: $id) {\n    id,\n    text,\n    completed\n  }\n}",
+								"variables": "{\n    \"id\": 9\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "410"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"19a-aXMpA2ZPpY4UTWpUOZTq4PGdOQg\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:29:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"message\": \"Task with id: 9 cannot be changed\",\n            \"locations\": [\n                {\n                    \"line\": 2,\n                    \"column\": 3\n                }\n            ],\n            \"path\": [\n                \"toggleTaskCompletion\"\n            ],\n            \"extensions\": {\n                \"code\": \"INTERNAL_SERVER_ERROR\",\n                \"exception\": {\n                    \"stacktrace\": [\n                        \"Error: Task with id: 9 cannot be changed\",\n                        \"    at toggleTaskCompletion (/home/alvaro/Projects/plotify.co.uk-coding-test/packages/backend/build/services/Task.js:14:15)\"\n                    ]\n                }\n            }\n        }\n    ],\n    \"data\": {\n        \"toggleTaskCompletion\": null\n    }\n}"
+				},
+				{
+					"name": "Task 1 can be changed",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "content-type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation ToggleTaskCompletion($id: ID!) {\n  toggleTaskCompletion(id: $id) {\n    id,\n    text,\n    completed\n  }\n}",
+								"variables": "{\n    \"id\": 1\n}"
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/graphql",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "78"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4e-tqZwpRLqbi3M9IksslLx24EZvrI\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 10 Apr 2023 10:30:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"data\": {\n        \"toggleTaskCompletion\": {\n            \"id\": \"1\",\n            \"text\": \"Task I\",\n            \"completed\": true\n        }\n    }\n}"
+				}
+			]
+		}
+	]
+}

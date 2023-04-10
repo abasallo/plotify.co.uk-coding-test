@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Phases Component Renders properly 1`] = `
+<div
+  className="MuiContainer-root sc-beqWaB emoJJV MuiContainer-maxWidthLg"
+>
+  <div
+    className="MuiGrid-root sc-gueYoa gcjcJu MuiGrid-container MuiGrid-spacing-xs-2"
+  />
+</div>
+`;
